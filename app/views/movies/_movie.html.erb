@@ -1,0 +1,11 @@
+<div class="trailer-single fix-margin-search">
+  <div class="trailer-img">
+    <%= image_tag movie.poster.url if movie.poster? %>
+  </div>
+  <div class="trailer-titel">
+    <h5>
+      <p class="badge badge-warning"> <%= movie.score(:critic).zero? ? "N/A" : movie.score(:critic).round(1) %> </p>
+      <p><%= link_to (movie.name + " (" + movie.release_date.year.to_s + ")"), movie, class: "text-center" %></p>
+    </h5>
+  </div>
+</div>

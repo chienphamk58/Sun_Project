@@ -1,0 +1,127 @@
+<%= content_for :slider do %>
+  <div class="slider-area fake-slider container"></div>
+<% end %>
+<div class="container content-margin-top">
+  <div class="row">
+    <div class="col-3 reset-padding">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <%= link_to t(".tab_movie.title"), "#menu1", data: {toggle: "pill"}, class: "nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to t(".tab_tvshow.title"), "#menu2", data: {toggle: "pill"}, class: "nav-link active" %>
+        </li>
+      </ul>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <%= render "tv_shows/menu1"%>
+        <%= render "tv_shows/menu2"%>
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="row">
+        <div class="col-4">
+          <%= image_tag @tv_show.poster.url if @tv_show.poster? %>
+        </div>
+        <div class="col-8 bg-dark">
+          <br>
+          <div class="text-center">
+            <h3 class="text-white">
+              <%= @tv_show.name %>
+              (<%= @tv_show.load_release_year.year %>)
+            </h3>
+            <% if @critic_score.zero? %>
+              <div class="text-white">
+                <%= t "movies.show..right_box.note1" %>
+              </div>
+              <div class="text-white">
+                <%= t "movies.show.right_box.note2" %>
+              </div>
+            <% end %>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-6 text-right">
+              <h3><span class="badge-warning badge">
+                  <%= @critic_score.zero? ? "N/A" : @critic_score.round(1) %></span></h3>
+              <h4 class="text-muted">
+                <%= t "movies.show.right_box.tomascore" %>
+              </h4>
+              <p class="text-light">
+                <%= t "movies.show.right_box.explain1" %>
+              </p>
+            </div>
+            <div class="col-6">
+              <h3><span class="badge-warning badge">
+                  <%= @audience_score.zero? ? "N/A" : @audience_score.round(1) %></span></h3>
+              <h4 class="text-muted">
+                <%= t "movies.show.right_box.audiscore" %>
+              </h4>
+              <p class="text-light">
+                <%= t "movies.show.right_box.explain2" %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="col-12">
+          <h3 class="text-center bg-danger"><span class="text-white ">
+              <%= t "seasons" %></span></h3>
+          <div class="row">
+            <% @tv_show.seasons.each do |season| %>
+              <div class="col-4">
+                <div class="card seasons_line">
+                  <%= image_tag season.poster.url, class: "card-img-top" if season.poster? %>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <span class="badge badge-warning"><%= season.score(:critic).zero? ? "N/A" : season.score(:critic).round(1)  %></span>
+                      <%= link_to "Season #{season.season_number} (#{season.load_release_year.year})", tv_show_season_path(@tv_show, season)%>
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h3 class="text-center bg-danger"><span class="text-white ">
+              <%= t"movies.show.tab_movie.title" %></span>
+            <%= t"info"%>
+          </h3>
+        </div>
+        <div class="col-12">
+          <p>
+            Director:
+            <% @tv_show.load_director.each do |d| %>
+              <span class="text-light"><%= d %></span>
+            <% end %>
+          </p>
+          <p>
+            Release date: <span class="text-light"><%= I18n.l(@tv_show.load_release_year.to_time, format: :short) %></span>
+          </p>
+          <p>Informartion:
+            <p class="text-light">
+              <%= @tv_show.info %>
+            </p>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h3 class="text-center bg-danger"><span class="text-white ">
+              <%= t"cast" %></span></h3>
+        </div>
+        <div class="col-12">
+          <div class="row">
+            <div class="owl-carousel celebrities-slider" style="color: white">
+              <%= render @celebrities %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

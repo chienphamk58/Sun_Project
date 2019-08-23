@@ -1,0 +1,492 @@
+en:
+  not_found: "Can't find any movies with your keywords."
+  kw_blank: "Keyword can't be blank"
+  add_celebiry: "Add Celebrity"
+  project_title: "Rotten Potatoes - Review Film"
+  users:
+    new:
+      h1: "Sign up"
+    form:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Confirmation"
+      submit: "Sign up"
+    show:
+      not_update_yet: "Not update yet !"
+  shared:
+    error:
+      one: "The form contains 1 error."
+      other: "The form contains #{count} errors"
+
+  admin:
+    movies:
+      not_found: "Movie not found!"
+      form:
+        name: "Name"
+        release_date: "Release Date"
+        poster: "Poster"
+        info: "Information"
+        submit: "Submit"
+      index:
+        title: "Movies"
+        show: "Show"
+        edit: "Edit"
+        destroy: "Destroy"
+        sure: "Are you sure?"
+        new: "New Movie"
+        id: "ID"
+        name: "Movie Name"
+        image: "Image"
+        action: "Action"
+      create:
+        create_success: "Movie Created"
+        create_failed: "Create Movie Failed!"
+      new:
+        title: "New Movie"
+      edit:
+        title: "Editing Movie"
+      update:
+        update_success: "Movie Updated"
+        update_fail: "Update Movie Failed !"
+      destroy:
+        deleted_success: "Movie Deleted"
+        delete_failed: "Delete Movie Failed !"
+    not_logged_in: "Please log in"
+    not_admin: "Access denied"
+    tv_shows:
+      not_found: "TvShow not found!"
+      form:
+        name: "Name"
+        info: "Information"
+        submit: "Submit"
+        poster: "Poster"
+      index:
+        title: "TvShows"
+        show: "Show"
+        edit: "Edit"
+        destroy: "Destroy"
+        sure: "Are you sure?"
+        new: "New TvShow"
+      create:
+        create_success: "TvShow Created"
+        create_failed: "Create TvShow Failed!"
+      show:
+        title: "Show Tvshow"
+        edit: "Edit"
+        destroy: "Destroy"
+        sure: "Are you sure?"
+        add_season: "Add a season: "
+      new:
+        title: "New TvShow"
+      edit:
+        title: "Editing Tv Show"
+      update:
+        update_success: "TvShow Updated"
+        update_fail: "Update TvShow Failed !"
+      destroy:
+        deleted_success: "TvShow Deleted"
+        delete_failed: "Delete Tvshow Failed !"
+
+    seasons:
+      create:
+        create_success: "Season Created"
+        create_failed: "Create Season Failed!"
+      update:
+        update_success: "Season Updated"
+        update_failed: "Update Season Failed!"
+      destroy:
+        delete_success: "Season Deleted"
+      form:
+        season_number: "Season number"
+        info: "Info"
+      season:
+        edit: "Edit this season: "
+        delete: "Delete this season"
+      edit:
+        edit: "Editing season "
+      show:
+        edit: "Edit"
+        back: "Back"
+      duplicate: "Duplicated season number!"
+    episodes:
+      create:
+        create_success: "Episode Created"
+        create_failed: "Create Episode Failed!"
+      update:
+        update_success: "Episode Updated"
+        update_failed: "Update Episode Failed!"
+      destroy:
+        delete_success: "Episode Deleted"
+      form:
+        episode_number: "Episode number"
+        info: "Info"
+        release_date: "Release date"
+      episode:
+        edit: "Edit this Episode: "
+        delete: "Delete Episode"
+      edit:
+        edit: "Editing Episode "
+      show:
+        edit: "Edit"
+        back: "Back"
+      duplicate: "Duplicated Episode number!"
+    celebrities:
+      not_found: "Celebrity not found!"
+      form:
+        name: "Name"
+        date_of_birth: "Date of Birth"
+        gender: "Gender"
+        nationality: "Nationality"
+        submit: "Submit"
+      index:
+        title: "Celebrities"
+        show: "Show"
+        edit: "Edit"
+        destroy: "Destroy"
+        sure: "Are you sure?"
+        new: "New Celebrity"
+      create:
+        create_success: "Celebrity Created"
+        create_failed: "Create Celebrity Failed!"
+      show:
+        title: "Show Celebrity"
+        edit: "Edit"
+        destroy: "Destroy"
+        sure: "Are you sure?"
+      new:
+        title: "New Celebrity"
+      edit:
+        title: "Editing Celebrity"
+      update:
+        update_success: "Celebrity Updated"
+        update_fail: "Update Celebrity Failed !"
+      destroy:
+        delete_success: "Celebrity Deleted"
+
+    celebrity_media:
+      not_found: "Celebrity not found!"
+      form:
+        celebrity: "Celebrity"
+        role: "Role"
+      create:
+        create_success: "Celebrity Created"
+        create_failed: "Create Celebrity Failed!"
+      destroy:
+        delete_success: "Celebrity Deleted"
+      celebrity_medium:
+        destroy: "Delete"
+        sure: "Are you sure?"
+    news:
+      news:
+        sure: "Are you sure?"
+      index:
+        title: "News"
+      approve_form:
+        approve: Approved
+      reject_form:
+        reject: Reject
+      update:
+        update_success: "News Status Updated"
+    requests:
+      index:
+        title: "Requests"
+
+  movies:
+    show:
+      title: "Show Movie"
+      edit: "Edit"
+      destroy: "Destroy"
+      sure: "Are you sure?"
+      more: "View all"
+      tab_movie:
+        title: "Movies"
+        top: "Top Movies"
+        new: "New Movies"
+      tab_tvshow:
+        title: "TVShow"
+        top: "Top TVshow"
+        new: "New TVshow"
+      right_box:
+        note1: "Critics Consensus"
+        note2: "No consensus yet."
+        audiscore: "AUDIENCE SCORE"
+        tomascore: "TOMATOMETER"
+        explain1: "The percentage of Approved Tomatometer Critics who have given this movie a positive review."
+        explain2: "The percentage of users who rated this 3.5 stars or higher."
+        comment: "What did you think of the moview ?"
+      no_review: "No reviewed yet!"
+
+  tv_shows:
+    not_found: "TvShow not found!"
+    form:
+      name: "Name"
+      info: "Information"
+      submit: "Submit"
+    index:
+      title: "TvShows"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      sure: "Are you sure?"
+      new: "New TvShow"
+    create:
+      create_success: "TvShow Created"
+      create_failed: "Create TvShow Failed!"
+    show:
+      title: "Show Tvshow"
+      edit: "Edit"
+      destroy: "Destroy"
+      sure: "Are you sure?"
+      tab_movie:
+        title: "Movies"
+        top: "Top Movies"
+        new: "New Movies"
+      tab_tvshow:
+        title: "TVShow"
+        top: "Top TVshow"
+        new: "New TVshow"
+    new:
+      title: "New TvShow"
+    edit:
+      title: "Editing Tv Show"
+    update:
+      update_success: "TvShow Updated"
+      update_fail: "Update TvShow Failed !"
+    destroy:
+      deleted_success: "TvShow Deleted"
+      delete_failed: "Delete Tvshow Failed !"
+
+  celebrities:
+    not_found: "Celebrity not found!"
+    form:
+      name: "Name"
+      date_of_birth: "Date of Birth"
+      gender: "Gender"
+      nationality: "Nationality"
+      submit: "Submit"
+    index:
+      title: "Celebrities"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      sure: "Are you sure?"
+      new: "New Celebrity"
+    create:
+      create_success: "Celebrity Created"
+      create_failed: "Create Celebrity Failed!"
+    show:
+      title: "Show Celebrity"
+      edit: "Edit"
+      destroy: "Destroy"
+      sure: "Are you sure?"
+    new:
+      title: "New Celebrity"
+    edit:
+      title: "Editing Celebrity"
+    update:
+      update_success: "Celebrity Updated"
+      update_fail: "Update Celebrity Failed !"
+    destroy:
+      deleted_success: "Celebrity Deleted"
+
+  news:
+    not_found: "News not found!"
+    form:
+      content: "Content"
+      submit: "Submit"
+      title: "Title"
+    index:
+      title: "News"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      sure: "Are you sure?"
+      new: "New News"
+    create:
+      create_success: "News Created"
+      create_failed: "Create News Failed!"
+    show:
+      title: "Show News"
+      edit: "Edit"
+      destroy: "Destroy"
+      sure: "Are you sure?"
+    new:
+      title: "New News"
+    edit:
+      title: "Editing News"
+    update:
+      update_success: "News Updated"
+      update_fail: "Update News Failed !"
+    destroy:
+      deleted_success: "News Deleted"
+      delete_failed: "Delete News Failed !"
+    news:
+      edit: "Edit this article"
+      destroy: "Destroy this article"
+      sure: "Are you sure?"
+
+  reviews:
+    form:
+      content: "Content"
+      score: "Score"
+      submit: "Submit"
+    index:
+      title: "Reviews"
+      show: "Show"
+      destroy: "Destroy"
+      sure: "Are you sure?"
+      new: "New Review"
+    create:
+      create_success: "Review Created"
+      create_failed: "Create Review Failed!"
+    show:
+      title: "Show Review"
+      edit: "Edit"
+      destroy: "Destroy"
+      sure: "Are you sure?"
+    new:
+      title: "New News"
+    edit:
+      title: "Editing News"
+    update:
+      update_success: "News Updated"
+      update_fail: "Update News Failed !"
+    destroy:
+      delete_failed: "Delete News Failed !"
+    news:
+      edit: "Edit this article"
+      destroy: "Destroy this article"
+      title: "New Review"
+      deleted_success: "Review Deleted"
+    review:
+      sure: "Are you sure?"
+      delete: "Delete"
+  time:
+    formats:
+      short: "%d-%m-%Y"
+      long: "%d-%m-%Y %H:%M"
+      confirmation: "Confirmation"
+      submit: "Create my account"
+  sessions:
+    new:
+      h1: "Log in"
+      submit: "Log in"
+      new_user?: "New user? "
+      signup: "Sign up now!"
+      checkbox: "Remember me on this computer"
+
+  search:
+    index:
+      search_result: "Search Result"
+      movies: "Movies"
+      tv_shows: "TvShows"
+      found: "Found"
+
+  news_title: "News"
+  movies_title: "Movies"
+  tvshow_title: "TVShow"
+  critics_title: "Critics"
+  login_title: "Login"
+  logout: "Logout"
+  signup_title: "Sign Up"
+  profile: "Profile"
+  setting: "Setting"
+  subcribe: "Subcribe"
+  name: "Name: "
+  submit: "Submit"
+  photos: "Photos"
+  info: "Info"
+  cast: "Cast"
+  sign_in:
+    title: "Sign in"
+    google: "Sign in with Google"
+    facebook: "Sign in with Facebook"
+
+  sign_up:
+    title: "Sign up"
+
+  password:
+    title: "Password: "
+    remember: "Remember password"
+    confirm: "Confirm Password: "
+
+  email:
+    title: "Email: "
+  organization:
+    title: "Organization: "
+  edit_profile:
+    title: "Edit Profile"
+  your_new:
+    title: "Your News"
+  post_review:
+    title: "Post Reviews"
+  up_role:
+    title: "Request change role to critic"
+  request:
+    title: "Your Requests"
+  no_post: "There are no posts."
+  no_news: "There are no news. "
+
+  slider:
+    title1: "For Honor - O Filme (Dublado)"
+    title1_sub: "23/3/2019"
+    title2: "Prehistoric Shark"
+    title2_sub: "23/4/2019"
+    title3: "Ant-Man"
+    title3_sub: "23/1/2019"
+    title4: "AQUAMAN"
+    title4_sub: "23/8/2018"
+    title5: "title slider 5"
+
+  footer:
+    title1: "title slider 1"
+    title2: "title slider 2"
+    title3: "title slider 3"
+    title4: "title slider 4"
+
+  teamplate:
+    lorem: "It is a long established fact that a reader will be distracted
+    readable"
+    name: "Out Of relation"
+    rate: "3.45"
+    menu1: "menu1"
+    menu2: "menu2"
+    menu3: "menu3"
+
+  section:
+    title_news: "NEWS OF THE"
+    span_week: "WEEK"
+    title_moviews: "MOVIES"
+    span_moviews: "& DVDS"
+    title_tv: "TV"
+    span_tv: "SHOWS"
+
+  layouts:
+    admin:
+      title: "Admin Dashboard"
+      h1: "Admin"
+      left_side:
+        movies: "Movies"
+        tv_show: "TV Shows"
+        celebrities: "Celebrities"
+        news: "News"
+        requests: "Requests"
+  nameteam: "Team TSC"
+  nameweb: "Rotten Tomatoes &copy;"
+  admin_gui:
+    language1: "English"
+    language2: "Vietnamese"
+    teamplate:
+      mail: "You have 3 new mail."
+      title: "Sub: New Account"
+      note: "You have 4 new notification."
+      time: "11.00 am Today"
+  Search: "Search"
+  requests:
+    create:
+      create_success: "Requests created"
+      create_failed: "Already requested!"
+      wrong_role: "You cannot change role!"
+      time: "11.00 am Today"
+  no_requests: "No request"

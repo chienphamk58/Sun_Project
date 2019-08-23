@@ -1,0 +1,19 @@
+<div class="modal-body">
+  <%= form_for @user, url: user_path(@user), method: :patch  do |f| %>
+    <%= f.label t "name" %>
+    <%= f.text_field :name, class: "form-control" %>
+
+    <%= f.label t "email.title" %>
+    <%= f.text_field :email, class: "form-control", rows: 30 %>
+
+    <%= f.label t "organization.title" %>
+    <%= f.text_field :organization, class: "form-control" %>
+
+    <span class="avatar">
+        <%= f.file_field :avatar %>
+    </span>
+
+    <br><br>
+    <%= f.submit t("submit"), class: "btn btn-primary" %>
+  <% end %>
+</div>

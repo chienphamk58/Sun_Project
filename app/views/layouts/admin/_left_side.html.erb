@@ -1,0 +1,34 @@
+<div class="side-header show">
+  <button class="side-header-close"><i class="zmdi zmdi-close"></i></button>
+  <div class="side-header-inner custom-scroll">
+    <nav class="side-header-menu" id="side-header-menu">
+      <ul>
+        <li>
+          <%= link_to admin_movies_path do %>
+            <i class="ti-package"></i> <span><%= t ".movies" %></span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to admin_tv_shows_path do %>
+            <i class="ti-palette"></i> <span><%= t ".tv_show" %></span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to admin_celebrities_path do %>
+            <i class="ti-palette"></i> <span><%= t ".celebrities" %></span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to admin_news_index_path do %>
+            <i class="ti-palette"></i> <span><%= t ".news" %></span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to admin_requests_path do %>
+            <i class="ti-palette"></i> <span><%= t ".requests" %></span>
+          <% end %>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

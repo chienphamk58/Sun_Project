@@ -1,0 +1,66 @@
+users_name_max_length: 50
+users_email_max_length: 255
+users_password_min_length: 6
+users:
+  role:
+    admin: 0
+    moderator: 1
+    critic: 2
+    normal: 3
+  index_avatar_height: 200
+  index_avatar_width: 200
+
+paginate: 9
+tab_show: 10
+limit_cosine: 0.3
+not_review_yet: 0
+
+movies:
+  name_max_length: 100
+  info_max_length: 1000
+  index_poster_height: 400
+  index_poster_width: 270
+  poster_accept: "image/jpeg,image/gif,image/png"
+  top: 10
+
+tvshows:
+  name_max_length: 100
+  info_max_length: 1000
+  index_poster_height: 400
+  index_poster_width: 270
+  poster_accept: "image/jpeg,image/gif,image/png"
+
+seasons:
+  info_max_length: 1000
+  index_poster_height: 400
+  index_poster_width: 270
+  poster_accept: "image/jpeg,image/gif,image/png"
+
+episodes:
+  info_max_length: 1000
+
+celebrities:
+  name_max_length: 100
+  index_portrait_height: 400
+  index_portrait_width: 270
+  portrait_accept: "image/jpeg,image/gif,image/png"
+
+news:
+  title_max_length: 150
+  content_max_length: 10000
+  paginate: 10
+  status:
+    pending: :pending
+    approved: :approved
+    rejected: :rejected
+  title:
+    truncate: 4
+
+reviews:
+  score_range: !ruby/range 1..10
+
+requests:
+  status:
+    pending: :pending
+    approved: :approved
+    rejected: :rejected

@@ -1,0 +1,44 @@
+<%= content_for :slider do %>
+  <div class="slider-area fake-slider container"></div>
+<% end %>
+<div class="container content-margin-top reset-padding">
+  <p id="notice"><%= notice %></p>
+  <div class="row">
+    <div class="col-9">
+      <h2 class="text-danger movie_head"><%= t "tvshow_title" %></h2>
+      <div class="row">
+        <% @tv_shows.each do |tv_show| %>
+          <div class="col-4">
+            <div class="card movie_line">
+              <%= image_tag tv_show.poster.url, class: "card-img-top" if tv_show.poster? %>
+              <div class="card-body item-body">
+                <h4 class="card-title">
+                  <span class="badge badge-warning">
+                    <%= tv_show.score(:critic).zero? ? "N/A" : tv_show.score(:critic).round(1) %>
+                  </span>
+                  <%= link_to (tv_show.name + " (" + tv_show.load_release_year.year.to_s + ")"), tv_show %>
+                </h4>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <%= paginate @tv_shows, theme: "twitter-bootstrap-4", pagination_class: "pagination-sm" %>
+    </div>
+    <div class="col-3 reset-padding">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <%= link_to t("movies.show.tab_movie.title"), "#menu1", data: {toggle: "pill"}, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t("movies.show.tab_tvshow.title"), "#menu2", data: {toggle: "pill"}, class: "nav-link active" %>
+        </li>
+      </ul>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <%= render "menu1" %>
+        <%= render "menu2" %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,126 @@
+<%= content_for :slider do %>
+  <div class="slider-area fake-slider container"></div>
+<% end %>
+<div class="container content-margin-top">
+  <div class="row">
+    <div class="col-3 reset-padding">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <%= link_to t("movies.show.tab_movie.title"), "#menu1", data: {toggle: "pill"}, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t("movies.show.tab_tvshow.title"), "#menu2", data: {toggle: "pill"}, class: "nav-link active"%>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <%= render "tv_shows/menu1" %>
+        <%= render "tv_shows/menu2" %>
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="row">
+        <div class="col-4">
+          <%= image_tag @episode.season.poster.url if @episode.season.poster? %>
+        </div>
+        <div class="col-8 bg-dark">
+          <br>
+          <div class="text-center">
+            <h3 class="text-white">
+              <%= @episode.season.tv_show.name %>
+              (<%= @episode.season.tv_show.load_release_year.year %>)
+            </h3>
+            <h3 class="text-white">
+              <%= t ".season" %> <%= @episode.season.season_number %> -
+              <%= t ".episode" %> <%= @episode.episode_number %>
+            </h3>
+            <% if @critic_score.zero? %>
+              <div class="text-white">
+                <%= t "movies.show.right_box.note1" %>
+              </div>
+              <div class="text-white">
+                <%= t "movies.show.right_box.note2" %>
+              </div>
+            <% end %>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-6 text-right">
+              <h3><span class="badge-warning badge">
+                  <%= @critic_score.zero? ? "N/A" : @critic_score.round(1) %></span></h3>
+              <h4 class="text-muted">
+                <%= t "movies.show.right_box.tomascore" %>
+              </h4>
+              <p class="text-light">
+                <%= t "movies.show.right_box.explain1" %>
+              </p>
+            </div>
+            <div class="col-6">
+              <h3><span class="badge-warning badge">
+                  <%= @audience_score.zero? ? "N/A" : @audience_score.round(1) %></span></h3>
+              <h4 class="text-muted">
+                <%= t "movies.show.right_box.audiscore" %>
+              </h4>
+              <p class="text-light">
+                <%= t "movies.show.right_box.explain2" %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="col-8 offset-2">
+          <% if user_signed_in? %>
+            <%= render("reviews/form", medium_id: @episode.medium.id, user_id: current_user.id) unless @reviewed %>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h3 class="text-center bg-danger"><span class="text-white ">
+              Episode</span>
+            <%= t"info"%>
+          </h3>
+        </div>
+        <div class="col-12">
+          <p>
+            Director:
+            <% @episode.load_director.each do |d| %>
+              <span class="text-light"><%= d %></span>
+            <% end %>
+          </p>
+          <p>
+            Release date: <span class="text-light"><%= I18n.l(@episode.release_date.to_time, format: :short) %></span>
+          </p>
+          <p>Informartion:
+            <p class="text-light">
+              <%= @episode.info %>
+            </p>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h3 class="text-center bg-danger"><span class="text-white ">
+              <%= t"cast" %></span></h3>
+        </div>
+        <div class="col-12">
+          <div class="owl-carousel celebrities-slider" style="color: white">
+            <%= render @celebrities %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h3 class="text-center bg-danger"><span class="text-white ">
+              <%= t"review" %></span>
+          </h3>
+        </div>
+        <% if @episode.medium.reviews.any? %>
+          <%= render @episode.medium.reviews %>
+        <% else %>
+          <%= t ".no_review_yet" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

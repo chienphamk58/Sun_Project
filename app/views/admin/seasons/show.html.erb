@@ -1,0 +1,28 @@
+<div class="box">
+  <div class="box-body">
+    <h3 class="text-center"><%= t ".Season" %>
+      <span class="text-danger"><%= @season.season_number %></span>
+    </h3>
+    <span class="badge badge-danger">
+      <%= link_to t(".back"), admin_tv_show_path(@tv_show) %>
+    </span>
+    <span class="badge badge-primary">
+      <%= link_to t(".edit"), edit_admin_tv_show_season_path(@season) %>
+    </span>
+    <br><br>
+    <%= @season.info %>
+  </div>
+</div>
+
+<% if @season.episodes.any? %>
+  <br>
+  <%= render @season.episodes %>
+<% end %>
+
+<h2><%= t ".add_episode" %></h2>
+<%= render "admin/episodes/form", episode: @season.episodes.build %>
+<br>
+
+<span class="badge badge-danger">
+  <%= link_to t(".back"), admin_tv_show_path(@tv_show) %>
+</span>

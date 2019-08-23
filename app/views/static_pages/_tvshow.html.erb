@@ -1,0 +1,29 @@
+<section class="tailer-area pb-90 indicator-style-two">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-titel style-3 text-left">
+          <h2><%= t "section.title_tv"%> <span> <%= t "section.span_tv" %></span></h2>
+          <p><%= t "teamplate.lorem" %></p>
+        </div>
+      </div>
+    </div>
+    <div class="main-section">
+      <div class="recent-upload-active owl-carousel owl-theme">
+        <% @tv_shows.each do |tv_show| %>
+          <div class="trailer-single">
+            <div class="trailer-img tvshow-home-image">
+              <%= image_tag tv_show.poster.url if tv_show.poster? %>
+            </div>
+            <div class="trailer-titel">
+              <h5>
+                <p class="badge badge-warning"> <%= tv_show.score(:critic).zero? ? "N/A" : tv_show.score(:critic).round(1) %> </p>
+                <p><%= link_to (tv_show.name + " (" + tv_show.load_release_year.year.to_s + ")"), tv_show, class: "text-center" %></p>
+              </h5>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
